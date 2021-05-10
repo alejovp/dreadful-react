@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+
+.header-filters {
+    height: $header-height;
+    padding: 0 $content-padding;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $primary-red;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-$header-height);
+    display: flex;
+    align-items: center;
+
+    &_search {
+        padding-right: 20px;
+    }
+}
+
+.filters-open {
+    transform: translateY($header-height);
+}

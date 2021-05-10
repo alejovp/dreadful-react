@@ -1,0 +1,13 @@
+@import '../../styles/variables.scss';
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &_content {
+        min-height: calc(100vh - #{$footer-height});
+        background-color: #2c2c2c;
+        padding-top: $header-height;
+    }
+}

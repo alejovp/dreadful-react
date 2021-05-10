@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+
+.home {
+    height: calc(100vh - #{$footer-height + $header-height});
+    display: flex;
+
+    &_panel {
+        width: 50%;
+        a {
+            font-size: 30px;
+            font-weight: 600;
+        }
+    }
+}

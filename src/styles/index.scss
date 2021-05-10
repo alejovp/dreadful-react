@@ -1,0 +1,224 @@
+//--------------------------------------------------
+// Carbon components styles
+//--------------------------------------------------
+
+$css--font-face: true;
+$css--helpers: true;
+$css--body: true;
+$css--use-layer: true;
+$css--reset: true;
+$css--default-type: true;
+$css--plex: true;
+
+// @import 'carbon-components/scss/globals/scss/styles';
+@import 'carbon-components/scss/globals/scss/_css--reset.scss';
+@import 'carbon-components/scss/globals/scss/_css--font-face.scss';
+@import 'carbon-components/scss/globals/scss/_css--helpers.scss';
+@import 'carbon-components/scss/globals/scss/_css--body.scss';
+
+@import 'carbon-components/scss/globals/grid/_grid.scss';
+
+@import 'carbon-components/scss/components/ui-shell/_ui-shell.scss';
+@import 'carbon-components/scss/components/pagination-nav/_pagination-nav.scss';
+@import 'carbon-components/scss/components/search/_search.scss';
+@import 'carbon-components/scss/components/button/_button.scss';
+@import 'carbon-components/scss/components/text-input/_text-input.scss';
+@import 'carbon-components/scss/components/tooltip/_tooltip.scss';
+@import 'carbon-components/scss/components/skeleton/_skeleton-placeholder.scss';
+
+//--------------------------------------------------
+// App Carbon components styles override
+//--------------------------------------------------
+
+@import './variables';
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+#root {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.bx--search {
+    .bx--search-input {
+        height: $input-height;
+        border-radius: $input-height / 2;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    button.bx--search-close {
+        height: $input-height;
+        right: 10px;
+
+        &:hover {
+            outline: none;
+            background-color: unset;
+            border: none;
+        }
+
+        &:active {
+            outline: none;
+            background-color: unset;
+            border: none;
+        }
+
+        &:focus {
+            outline: none;
+            border: none;
+        }
+    }
+}
+
+.bx--text-input {
+    height: $input-height;
+    border-radius: $input-height / 2;
+    border-bottom: none;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:active {
+        outline: none;
+    }
+}
+
+.bx--header__menu-bar {
+    .bx--header__menu-item {
+        &--current {
+            background-color: $primary-red;
+            
+            &::after {
+                border-bottom: 3px solid $primary-red;
+            }
+
+            &:focus {
+                background-color: $primary-red;
+            }
+
+            &:hover {
+                background-color: $primary-red;
+                opacity: 0.9;
+            }
+        }
+    }
+
+    a.bx--header__menu-item {
+        &:focus {
+            border: none;
+        }
+
+        border: none;
+    }
+
+}
+
+
+.bx--pagination-nav {
+
+    &__list {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        justify-content: center;
+        height: $pagination-nav-height;
+    }
+
+    &__page {
+        font-size: 12px;
+        color: white;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        min-width: unset;
+        padding: 0;
+        margin: 3px;
+        font-size: 12;
+        background-color: $secondary-red;
+
+        &:not(&--direction) {
+            &::after {
+                position: unset;
+                height: 0;
+                background-color: unset;
+                transition: unset;
+            }
+        }
+
+        &.bx--pagination-nav__page--active {
+            color: white;
+            font-weight: 600;
+            background-color: $primary-red;
+        }
+
+        &:hover {
+            color: unset;
+            background-color: $secondary-red;
+            opacity: 0.8;
+        }
+
+        &:focus {
+            outline: none;
+            outline-offset: 0;
+        }
+    }
+
+    .bx--btn {
+
+        min-height: unset;
+
+        &.bx--btn--icon-only {
+            height: $pagination-nav-height / 2;
+
+            &.bx--tooltip__trigger:focus {
+                border-color: transparent;
+            }
+            
+            &:focus {
+                box-shadow: none;
+            }
+
+            & svg {
+                width: 25px;
+                height: 25px;
+                opacity: 0.8;
+
+                &:hover {
+                    opacity: 1;
+                }
+                
+                path {
+                    fill: white;
+                }
+            }
+            
+            &:hover {
+                background-color: unset;
+            }
+
+            .bx--assistive-text {
+                color: white;
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+.bx--header {
+    &__nav {
+        &::before {
+            background-color: transparent;
+        }
+    }
+}

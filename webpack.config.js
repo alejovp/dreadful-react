@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const CopyPlugin = require('copy-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const BUILD_GLOBALS = require('./scripts/globals');
 const { ENV, APP_DIR, PUBLIC_DIR } = BUILD_GLOBALS;
 const isLocalEnv = ENV === 'local';
@@ -31,32 +32,27 @@ module.exports = {
     },
     module: {
         rules: [
-            // {
-            //   test: /\.s?css$/,
-            //   use: [
-            //     'style-loader',
-            //     'css-loader',
-            //     'sass-loader'
-            //   ],
-            // },
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader'
+                ]
+            },
             {
                 test: /\.jsx?$/,
                 include: [APP_DIR],
                 loader: 'babel-loader'
-            }
-            // {
-            //   test: /\.(jpg|png|gif|jpeg|woff|woff2|eot|ttf|svg)$/,
-            //   loader: 'file-loader',
-            //   include: [
-            //     APP_DIR,
-            //     path.resolve(__dirname, 'node_modules/semantic-ui-css/')
-            //   ],
-            //   options: {
-            //     name: '[name]-[sha256:hash:base64:4].[ext]',
-            //     publicPath: 'dist/images/',
-            //     outputPath: './images/'
-            //   }
-            // }
+            },
+            {
+                test: /\.(jpg|png|gif|jpeg|woff|woff2|eot|ttf|svg)$/,
+                loader: 'file-loader',
+                include: [APP_DIR],
+                options: {
+                    outputPath: './assets/'
+                }
+            },
         ]
     },
     plugins: [
@@ -73,9 +69,17 @@ module.exports = {
                 preserveLineBreaks: false
             },
             favicons: []
+        }),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, '__mocks__', 'data.json'),
+                    to: `${PUBLIC_DIR}/api-mock/`
+                }
+            ],
+        }),
+        new BundleAnalyzerPlugin({
+            analyzerMode: ENV === 'stats' ? 'server' : 'disabled'
         })
-    // new BundleAnalyzerPlugin({
-    //   analyzerMode: ENV === 'stats' ? 'server' : 'disabled'
-    // })
     ]
 };

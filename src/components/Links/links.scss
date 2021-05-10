@@ -1,0 +1,16 @@
+.links {
+    display: flex;
+
+    &_li {
+        padding: 5px;
+        
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        img {
+            max-height: 25px;
+        }
+    }
+}

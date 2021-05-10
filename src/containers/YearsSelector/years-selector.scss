@@ -1,0 +1,28 @@
+@import '../../styles/variables';
+
+div.years-selector {
+    width: $years-selector-width;
+    padding: 0;
+    background: white;
+    position: fixed !important;
+    box-shadow: 2px -2px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+
+    span.bx--tooltip__caret {
+        border-bottom: 0.42969rem solid $primary-red;
+    }
+
+    &_clear-button {
+        height: 25px;
+        right: 0;
+
+        &::before {
+            background-color: unset;
+        }
+        
+        &:hover {
+            background-color: unset;
+            border-bottom: none;
+        }
+    }
+}

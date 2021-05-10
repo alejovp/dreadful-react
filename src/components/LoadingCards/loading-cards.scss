@@ -1,0 +1,14 @@
+.loading-card {
+    
+    &_container {
+        height: 180px; 
+        width: 150px;
+    }
+
+    div.bx--skeleton__placeholder {
+        background: #352929db;
+        height: 160px;
+        width: 130px;
+    }
+    
+}

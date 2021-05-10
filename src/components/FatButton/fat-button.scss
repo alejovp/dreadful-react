@@ -1,0 +1,32 @@
+@import '../../styles/variables';
+
+.fat-button {
+
+    min-width: 150px;
+    height: $input-height;
+    border-radius: $input-height / 2;
+    border: none;
+    cursor: pointer;
+    padding: 0 30px;
+    position: relative;
+    font-size: 13px;
+
+    svg {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        z-index: 2;
+        width: 18px;
+        height: 18px;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+}

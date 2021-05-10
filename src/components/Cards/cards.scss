@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+
+.cards {
+    min-height: calc(100vh - #{$footer-height + $header-height + $pagination-nav-height});
+    padding: $header-height $content-padding 0 $content-padding;
+
+    &_title {
+        padding: 6px 20px;
+        color: white;
+        font-size: 18px;
+    }
+}

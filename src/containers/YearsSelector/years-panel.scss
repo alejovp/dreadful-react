@@ -1,0 +1,34 @@
+@import '../../styles/variables';
+
+$header-height: 36px;
+
+.years-panel {
+    height: 150px;
+    overflow-y: auto;
+
+    &_header {
+        padding: 10px;
+        color: black;
+        text-align: center;
+        background-color: $primary-red;
+        position: fixed;
+        width: $years-selector-width;
+        height: $header-height;
+    }
+
+    &_body {
+
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: $header-height;
+
+        &_item {
+            color: black;
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+
+    }
+
+}

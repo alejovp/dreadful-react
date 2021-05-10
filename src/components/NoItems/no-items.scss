@@ -1,0 +1,13 @@
+@import '../../styles/variables';
+
+.no-items {
+    padding-top: $header-height + 100px;
+    color: white;
+    width: 100%;
+    text-align: center;
+
+    &_text {
+        font-size: 14px;
+    }
+
+}

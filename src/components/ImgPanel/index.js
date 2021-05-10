@@ -1,0 +1,1 @@
+export { ImgPanel } from './ImgPanel';
