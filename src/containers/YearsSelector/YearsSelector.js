@@ -1,5 +1,5 @@
 import React, { useCallback, useContext } from 'react';
-import { Tooltip } from 'carbon-components-react/es/components/Tooltip/Tooltip';
+import { Tooltip } from 'carbon-components-react/lib/components/Tooltip/Tooltip';
 import { Calendar20 } from '@carbon/icons-react';
 import { Close16 } from '@carbon/icons-react';
 import { FatButton } from '../../components/FatButton';

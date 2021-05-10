@@ -20,3 +20,9 @@ export const ROUTES = {
         component: Series
     },
 };
+
+export const MAIN_ROUTES = [
+    ROUTES.HOME,
+    ROUTES.MOVIES,
+    ROUTES.SERIES
+];
